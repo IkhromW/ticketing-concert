@@ -1,0 +1,22 @@
+<%- include("partials/head") %> 
+
+<h1>Edit Data</h1>
+
+<form action="/register/data/edit/:<%= customer.id %> " method="post">
+<label for="username">Username</label> <br>
+<input type="text" name="username" value="<%= customer.username %> "><br>
+<label for="email">Email</label><br>
+<input type="text" name="email" value="<%= customer.email %> "> <br>
+<label for="gender" >Gender:</label><br>
+<select id="gender" name="gender">
+  <option value="Female">Female</option>
+  <option value="Male" selected><%= customer.gender %> </option>
+</select>
+<br>
+<label for="role">Role</label><br>
+<input type="text" name="role" id="role" value="<%= customer.role %> ">
+<br>
+<input type="submit" value="Edit">
+<input type="reset" value="Reset">
+</form>
+<%- include("partials/foot") %> 
