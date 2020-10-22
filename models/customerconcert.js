@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   };
   CustomerConcert.init({
     CustomerId: DataTypes.INTEGER,
-    ConcerId: DataTypes.INTEGER
+    ConcertId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'CustomerConcert',

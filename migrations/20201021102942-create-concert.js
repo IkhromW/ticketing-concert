@@ -11,11 +11,20 @@ module.exports = {
       group: {
         type: Sequelize.STRING
       },
-      schedule: {
+      date: {
+        type: Sequelize.DATE
+      },
+      time: {
         type: Sequelize.STRING
       },
       price: {
         type: Sequelize.INTEGER
+      },
+      stock: {
+        type: Sequelize.INTEGER
+      },
+      poster: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

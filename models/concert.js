@@ -11,12 +11,19 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Concert.belongsToMany(models.Customer,{
+        through: models.CustomerConcert,
+        foreignKey: 'ConcertId'
+      })
     }
   };
   Concert.init({
     group: DataTypes.STRING,
-    schedule: DataTypes.STRING,
-    price: DataTypes.INTEGER
+    date: DataTypes.DATE,
+    time: DataTypes.STRING,
+    price: DataTypes.INTEGER,
+    stock: DataTypes.INTEGER,
+    poster: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Concert',

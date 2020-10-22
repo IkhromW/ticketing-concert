@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Customer.belongsToMany(models.Concert,{
+        through: models.CustomerConcert,
+        foreignKey: 'CustomerId'
+      })
     }
   };
   Customer.init({

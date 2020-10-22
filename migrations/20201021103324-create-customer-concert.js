@@ -9,10 +9,26 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       CustomerId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: 'Customers'
+          },
+          key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
-      ConcerId: {
-        type: Sequelize.INTEGER
+      ConcertId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: 'Concerts'
+          },
+          key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       createdAt: {
         allowNull: false,
